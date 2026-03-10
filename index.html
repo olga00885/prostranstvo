@@ -5,144 +5,179 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Глубокая работа с телом</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box;}
+*{
+  box-sizing:border-box;
+}
 
 body{
-margin:0;
-font-family:'Inter',sans-serif;
-background:#0f0f10;
-color:#f3efe8;
-line-height:1.75;
+  margin:0;
+  background:#0d0d0e;
+  color:#f3efe8;
+  font-family:'Inter',sans-serif;
+  line-height:1.75;
 }
 
 .container{
-max-width:760px;
-margin:auto;
-padding:40px 22px 70px;
+  max-width:760px;
+  margin:auto;
+  padding:32px 20px 72px;
 }
 
 .hero{
-height:500px;
-border-radius:20px;
-background:
-linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.65)),
-url('https://raw.githubusercontent.com/olga00885/prostranstvo/main/3D63881A-C37E-4984-BAB4-BFC5B8EB9748.png');
-background-size:cover;
-background-position:center;
-display:flex;
-align-items:center;
-padding:40px;
-margin-bottom:40px;
+  min-height:540px;
+  border-radius:24px;
+  overflow:hidden;
+  position:relative;
+  margin-bottom:42px;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.38) 45%, rgba(0,0,0,0.72) 100%),
+    url('https://raw.githubusercontent.com/olga00885/prostranstvo/main/3D63881A-C37E-4984-BAB4-BFC5B8EB9748.png');
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:flex-end;
 }
 
-.hero-text h1{
-font-family:'Playfair Display',serif;
-font-size:34px;
-line-height:1.15;
-margin:0;
-color:white;
-max-width:420px;
+.hero-inner{
+  width:100%;
+  padding:42px 32px 34px;
 }
 
-.hero-text p{
-margin-top:12px;
-color:#c6a56a;
-font-size:15px;
-letter-spacing:1px;
-max-width:420px;
+.hero h1{
+  margin:0;
+  max-width:430px;
+  font-family:'Playfair Display',serif;
+  font-size:38px;
+  line-height:1.12;
+  color:#ffffff;
+}
+
+.hero-line{
+  width:84px;
+  height:1px;
+  background:linear-gradient(to right, #c7a66a, rgba(199,166,106,0.2));
+  margin:18px 0 16px;
+}
+
+.hero p{
+  margin:0 0 22px;
+  max-width:430px;
+  color:#d0ab6d;
+  font-size:15px;
+  letter-spacing:0.4px;
+}
+
+.hero-button{
+  display:inline-block;
+  padding:14px 22px;
+  border-radius:12px;
+  background:#c7a66a;
+  color:#111111;
+  text-decoration:none;
+  font-weight:500;
+  font-size:15px;
 }
 
 .features{
-display:grid;
-gap:12px;
-margin:0 0 38px;
+  display:grid;
+  gap:14px;
+  margin-bottom:38px;
 }
 
 .feature{
-border:1px solid rgba(198,165,106,0.24);
-border-radius:14px;
-padding:16px 18px;
-background:rgba(255,255,255,0.02);
-color:#e7e3db;
-font-size:15px;
+  border:1px solid rgba(199,166,106,0.24);
+  border-radius:16px;
+  padding:18px 20px;
+  background:rgba(255,255,255,0.02);
+  color:#e7e3db;
+  font-size:15px;
 }
 
 .section{
-margin-bottom:36px;
+  margin-bottom:36px;
 }
 
 .price{
-font-family:'Playfair Display',serif;
-font-size:24px;
-line-height:1.3;
-margin-bottom:10px;
-color:white;
+  font-family:'Playfair Display',serif;
+  font-size:26px;
+  line-height:1.3;
+  margin-bottom:12px;
+  color:#ffffff;
 }
 
 .text{
-font-size:16px;
-color:#e7e3db;
+  font-size:16px;
+  color:#e7e3db;
 }
 
 .buttons{
-margin-top:42px;
-display:flex;
-flex-direction:column;
-gap:14px;
+  margin-top:42px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
 }
 
 .button{
-display:block;
-text-align:center;
-padding:16px;
-border-radius:12px;
-text-decoration:none;
-font-weight:500;
-font-size:16px;
+  display:block;
+  text-align:center;
+  padding:16px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:500;
+  font-size:16px;
 }
 
 .button-primary{
-background:#c6a56a;
-color:#111;
+  background:#c7a66a;
+  color:#111111;
 }
 
 .button-secondary{
-border:1px solid rgba(198,165,106,0.5);
-color:#f3efe8;
-background:transparent;
+  border:1px solid rgba(199,166,106,0.42);
+  color:#f3efe8;
+  background:transparent;
 }
 
 @media (max-width:640px){
-.container{
-padding:28px 16px 54px;
-}
+  .container{
+    padding:24px 16px 56px;
+  }
 
-.hero{
-height:460px;
-padding:28px;
-}
+  .hero{
+    min-height:500px;
+    border-radius:20px;
+  }
 
-.hero-text h1{
-font-size:30px;
-max-width:320px;
-}
+  .hero-inner{
+    padding:32px 24px 28px;
+  }
 
-.hero-text p{
-font-size:14px;
-line-height:1.6;
-max-width:320px;
-}
+  .hero h1{
+    font-size:34px;
+    max-width:320px;
+  }
 
-.price{
-font-size:22px;
-}
+  .hero p{
+    max-width:320px;
+    font-size:14px;
+    line-height:1.6;
+  }
 
-.text{
-font-size:15.5px;
-}
+  .hero-button{
+    width:100%;
+    text-align:center;
+  }
+
+  .price{
+    font-size:24px;
+  }
+
+  .text{
+    font-size:15.5px;
+  }
 }
 </style>
 </head>
@@ -151,49 +186,46 @@ font-size:15.5px;
 
 <div class="container">
 
-<div class="hero">
-<div class="hero-text">
-<h1>Глубокая работа с телом</h1>
-<p>Для осанки · Для фигуры · Для баланса</p>
-</div>
-</div>
+  <div class="hero">
+    <div class="hero-inner">
+      <h1>Глубокая работа с телом</h1>
+      <div class="hero-line"></div>
+      <p>Для осанки · Для фигуры · Для баланса</p>
+      <a class="hero-button" href="https://t.me/Volikvo?text=Здравствуйте,%20хочу%20записаться">Записаться на сеанс</a>
+    </div>
+  </div>
 
-<div class="features">
-<div class="feature">Индивидуальная работа с телом под ваш текущий запрос и состояние.</div>
-<div class="feature">Глубокий ручной подход без поточного формата и шаблонных схем.</div>
-<div class="feature">Работа на уровне мышц, фасций, осанки, лимфотока и качества движения.</div>
-</div>
+  <div class="features">
+    <div class="feature">Индивидуальная работа с телом под ваш текущий запрос и состояние.</div>
+    <div class="feature">Глубокий ручной подход без поточного формата и шаблонных схем.</div>
+    <div class="feature">Работа на уровне мышц, фасций, осанки, лимфотока и качества движения.</div>
+  </div>
 
-<div class="section">
-<div class="price">60 минут — 4 500 ₽</div>
-<div class="text">
-Локальная работа с зоной перегрузки или общий стабилизирующий сеанс. Снятие мышечного гипертонуса, работа с триггерными точками, улучшение кровообращения и подвижности. Подходит для поддержания состояния и мягкой работы с проблемными зонами фигуры.
-</div>
-</div>
+  <div class="section">
+    <div class="price">60 минут — 4 500 ₽</div>
+    <div class="text">
+      Локальная работа с зоной перегрузки или общий стабилизирующий сеанс. Снятие мышечного гипертонуса, работа с триггерными точками, улучшение кровообращения и подвижности. Подходит для поддержания состояния и мягкой работы с проблемными зонами фигуры.
+    </div>
+  </div>
 
-<div class="section">
-<div class="price">90 минут — 7 000 ₽</div>
-<div class="text">
-Глубокая работа с мышечно-фасциальной системой и постуральными дисбалансами. Проработка триггерных точек, элементы миопрессуры, коррекция осанки, улучшение лимфатического дренажа. Работа с фигурой ведётся через восстановление функции тканей и нормализацию лимфотока.
-</div>
-</div>
+  <div class="section">
+    <div class="price">90 минут — 7 000 ₽</div>
+    <div class="text">
+      Глубокая работа с мышечно-фасциальной системой и постуральными дисбалансами. Проработка триггерных точек, элементы миопрессуры, коррекция осанки, улучшение лимфатического дренажа. Работа с фигурой ведётся через восстановление функции тканей и нормализацию лимфотока.
+    </div>
+  </div>
 
-<div class="section">
-<div class="price">120 минут — 8 000 ₽</div>
-<div class="text">
-Системная практика: постуральная коррекция, балансировка мышечных цепей, фасциальная проработка, миопрессура и работа с триггерными точками, восстановление лимфотока и дыхательного паттерна. Коррекция фигуры осуществляется через устранение структурных дисбалансов и нормализацию тонуса тканей.
-</div>
-</div>
+  <div class="section">
+    <div class="price">120 минут — 8 000 ₽</div>
+    <div class="text">
+      Системная практика: постуральная коррекция, балансировка мышечных цепей, фасциальная проработка, миопрессура и работа с триггерными точками, восстановление лимфотока и дыхательного паттерна. Коррекция фигуры осуществляется через устранение структурных дисбалансов и нормализацию тонуса тканей.
+    </div>
+  </div>
 
-<div class="buttons">
-<a href="https://max.ru/u/f9LHodD0cOJduj1aEbbZR0pCXey2Km5ZIuhI44Ws4MmD1fj7hDYKWf8OKk4" class="button button-primary">
-Записаться в MAX
-</a>
-
-<a href="https://t.me/Volikvo?text=Здравствуйте,%20хочу%20записаться" class="button button-secondary">
-Написать в Telegram
-</a>
-</div>
+  <div class="buttons">
+    <a href="https://max.ru/u/f9LHodD0cOJduj1aEbbZR0pCXey2Km5ZIuhI44Ws4MmD1fj7hDYKWf8OKk4" class="button button-primary">Записаться в MAX</a>
+    <a href="https://t.me/Volikvo?text=Здравствуйте,%20хочу%20записаться" class="button button-secondary">Написать в Telegram</a>
+  </div>
 
 </div>
 
